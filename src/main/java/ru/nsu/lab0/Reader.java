@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Reader {// объединение логики чтения и записи слов для последующей сортировки
-    public static List<String> read(String filename) {//можно во имя инкапсуляции обработку в отдельный файл вынести
+public class Reader {
+    public static List<String> readScan(String filename) {//можно во имя инкапсуляции обработку в отдельный файл вынести
         List<String> dictionary = new ArrayList<>();
 
         try (Scanner scanner = new Scanner(new File(filename))) {

@@ -5,6 +5,9 @@ import java.util.TreeMap;
 
 public class FrequencyCounter {
 
+    private int size;
+    private TreeMap<String,Integer> frequencyMap;
+
     public FrequencyCounter(List<String> dictionary){
         frequencyMap = new TreeMap<>();
         for (String word : dictionary) {
@@ -24,6 +27,4 @@ public class FrequencyCounter {
         return frequencyMap;
     }
 
-    private int size;
-    private TreeMap<String,Integer> frequencyMap = new TreeMap<>();
 }
