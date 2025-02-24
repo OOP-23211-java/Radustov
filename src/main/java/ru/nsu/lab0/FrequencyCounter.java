@@ -9,6 +9,9 @@ public class FrequencyCounter {
     private TreeMap<String,Integer> frequencyMap;
 
     public FrequencyCounter(List<String> dictionary){
+        if(dictionary.isEmpty()||dictionary.equals(null)) {
+            throw new RuntimeException("считанный файл пустой");
+        }
         frequencyMap = new TreeMap<>();
         for (String word : dictionary) {
             frequencyMap.put(word, frequencyMap.getOrDefault(word, 0) + 1);
