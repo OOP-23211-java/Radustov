@@ -11,12 +11,12 @@ public class ReaderTest {
     public void fileReadScanTest() {
         try {
             Reader.readScan(null);
-        } catch (IllegalStateException e) {
+        } catch (NullPointerException e) {
             System.out.println("Перехвачено исключение" + e.getMessage());
         }
         try {
             Reader.readScan("2");
-        } catch (IllegalStateException e) {
+        } catch (IllegalArgumentException e) {
             System.out.println("Перехвачено исключение" + e.getMessage());
         }
         try{

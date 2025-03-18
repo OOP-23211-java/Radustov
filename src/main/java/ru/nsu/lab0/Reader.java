@@ -6,17 +6,31 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * класс для чтения слов
+ */
+
 public class Reader {
+
+    /**
+     * метод считывает файл и записывает прочитанные слова в список
+     * @param filename имя файла
+     * @return List<String> список слов, считанных из файла
+     * @throws NullPointerException при пустом имени файла
+     * @throws IllegalArgumentException при недопустимом имени файла
+     * @throws IllegalArgumentException если файл не открылся
+     */
+
     public static List<String> readScan(String filename) {
 
         if (filename == null || filename.trim().isEmpty()) {
-            throw new IllegalStateException("Ошибка: имя файла не может быть пустым или null.");
+            throw new NullPointerException("Ошибка: имя файла не может быть пустым или null.");
 
         }
 
 
         if(  !filename.matches("^[a-zA-Zа-яА-Я0-9]+\\.txt$")){
-            throw new IllegalStateException("Ошибка: Имя файла не соответствует допустимому");
+            throw new IllegalArgumentException("Ошибка: Имя файла не соответствует допустимому");
         }
 
 
@@ -30,7 +44,7 @@ public class Reader {
                 dictionary.add(scanner.next());
             }
         } catch (FileNotFoundException e) {
-            throw new IllegalStateException("Ошибка: Файл не найден: " + filename, e);
+            throw new IllegalStateException("Ошибка: Файл не открылся: " + filename, e);
         }
 
         return dictionary;
